@@ -2,8 +2,8 @@
 // Omega Reset Mixin
 // ------------------------------------------------------------
 
-@mixin omega-reset($nth) {
-  $direction: get-direction($layout-direction, $default-layout-direction);
+@mixin omega-reset($nth, $direction: get-direction($layout-direction, $default-layout-direction)) {
+  margin-#{ get-opposite-direction($direction) }: 0;
   &:nth-child(#{$nth}) { margin-#{ $direction }: flex-gutter(); }
   &:nth-child(#{$nth}+1) { clear: none }
 }
